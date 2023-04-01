@@ -15,6 +15,11 @@ const allowedCors = [
   'http://zabotkina.ru',
   'https://zabotkina.ru',
 
+  'zabotkins.ru',
+  'http://zabotkins.ru',
+  'https://zabotkins.ru',
+
+
 ];
 
 const cors = (req, res, next) => {
