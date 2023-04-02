@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const tokenAuth = require('../middlewares/auth');
+// const tokenAuth = require('../middlewares/auth');
 
 const {
   createCountry,
@@ -9,10 +9,10 @@ const {
   getCountries
 } = require("../controllers/countries");
 
-router.post("/", tokenAuth, createCountry);
+router.post("/",  createCountry);
 router.get("/", getCountries);
 router.get("/:countryCode", getCountry);
-router.patch("/:countryCode", tokenAuth, updateCountry);
-router.delete("/:countryCode", tokenAuth, deleteCountry);
+router.patch("/:countryCode", updateCountry);
+router.delete("/:countryCode",  deleteCountry);
 
 module.exports = router;

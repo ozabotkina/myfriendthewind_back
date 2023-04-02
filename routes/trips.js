@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const tokenAuth = require('../middlewares/auth');
+// const tokenAuth = require('../middlewares/auth');
 
 
 const {
@@ -10,10 +10,10 @@ const {
   getTrips
 } = require("../controllers/trips");
 
-router.post("/", tokenAuth, createTrip);
+router.post("/",  createTrip);
 router.get("/", getTrips);
 router.get("/:tripCode", getTrip);
-router.patch("/:tripCode", tokenAuth, updateTrip);
-router.delete("/:tripCode", tokenAuth, deleteTrip);
+router.patch("/:tripCode", updateTrip);
+router.delete("/:tripCode",  deleteTrip);
 
 module.exports = router;

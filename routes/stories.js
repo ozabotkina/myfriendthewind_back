@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const tokenAuth = require('../middlewares/auth');
+// const tokenAuth = require('../middlewares/auth');
 
 const {
   createStory,
@@ -9,10 +9,10 @@ const {
   getStories
 } = require("../controllers/stories");
 
-router.post("/", tokenAuth, createStory);
+router.post("/",  createStory);
 router.get("/", getStories)
 router.get("/:storyCode", getStory);
-router.patch("/:storyCode", tokenAuth, updateStory);
-router.delete("/:storyCode", tokenAuth, deleteStory);
+router.patch("/:storyCode",  updateStory);
+router.delete("/:storyCode",  deleteStory);
 
 module.exports = router;

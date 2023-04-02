@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const tokenAuth = require('../middlewares/auth');
+// const tokenAuth = require('../middlewares/auth');
 
 const {
   createContinent,
@@ -9,10 +9,10 @@ const {
   deleteContinent,
 } = require("../controllers/continents");
 
-router.post("/", tokenAuth, createContinent);
+router.post("/", createContinent);
 router.get("/", getContinents);
 router.get("/:continentCode", getContinent);
-router.patch("/:continentCode", tokenAuth, updateContinent);
-router.delete("/:continentCode", tokenAuth, deleteContinent);
+router.patch("/:continentCode",  updateContinent);
+router.delete("/:continentCode",  deleteContinent);
 
 module.exports = router;

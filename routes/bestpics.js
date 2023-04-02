@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const tokenAuth = require('../middlewares/auth');
+// const tokenAuth = require('../middlewares/auth');
 
 const {
   createPic,
@@ -9,10 +9,10 @@ const {
   deletePic,
 } = require("../controllers/bestpics")
 
-router.post("/", tokenAuth, createPic);
+router.post("/",  createPic);
 router.get("/", getPics);
 router.get("/:id", getPic);
-router.patch("/:id", tokenAuth, updatePic);
-router.delete("/:id", tokenAuth, deletePic);
+router.patch("/:id",  updatePic);
+router.delete("/:id", deletePic);
 
 module.exports = router;

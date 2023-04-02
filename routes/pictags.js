@@ -9,10 +9,10 @@ const {
   deleteTag,
 } = require("../controllers/pictags")
 
-router.post("/", tokenAuth, createTag);
+router.post("/",  createTag);
 router.get("/", getTags);
 router.get("/:tagCode", getTag);
-router.patch("/:tagCode", tokenAuth, updateTag);
-router.delete("/:tagCode", tokenAuth, deleteTag);
+router.patch("/:tagCode",  updateTag);
+router.delete("/:tagCode",  deleteTag);
 
 module.exports = router;
