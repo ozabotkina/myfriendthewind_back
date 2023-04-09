@@ -51,6 +51,7 @@ module.exports.getContinents = (req, res, next) => {
 module.exports.updateContinent = (req, res, next) => {
   Continent.findOneAndUpdate({code:req.params.continentCode},
     {
+      code: req.body.code,
       title: req.body.title,
       titleEn: req.body.titleEn,
       coverTitle: req.body.coverTitle,

@@ -59,6 +59,7 @@ module.exports.updateTrip = (req, res, next) => {
   Trip.findOneAndUpdate(
     req.params.tripCode,
     {
+      code: req.body.code,
       title: req.body.title,
       titleEn: req.body.titleEn,
       coverTitle: req.body.coverTitle,
@@ -66,7 +67,9 @@ module.exports.updateTrip = (req, res, next) => {
       picPath: req.body.picsPath,
       coverPic: req.body.coverPic,
       countries: req.body.countries,
-      hashtags: req.body.hashtags
+      hashtags: req.body.hashtags,
+      issueDate: req.body.issueDate,
+
       },
     { new: true, runValidators: true }
   )

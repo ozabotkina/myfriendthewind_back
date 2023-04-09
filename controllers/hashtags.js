@@ -48,14 +48,12 @@ module.exports.getHashtags = (req, res, next) => {
 module.exports.updateHashtag = (req, res, next) => {
   Hashtag.findOneAndUpdate({code:req.params.hashtagCode},
     {
-      title: req.body.title,
-      titleEn: req.body.titleEn,
+      code: req.body.code,
       coverTitle: req.body.coverTitle,
       coverTitleEn: req.body.coverTitleEn,
-      picture: req.body.picture,
-      countries: req.body.countries
-
-      },
+      coverPic: req.body.coverPic,
+      picture: req.body.picture
+        },
     { new: true, runValidators: true }
   )
     .then((data) => {
